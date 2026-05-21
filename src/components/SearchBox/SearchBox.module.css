@@ -1,0 +1,14 @@
+.find {
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+    margin-top: 24px;
+}
+.find p {
+    margin: 0;
+}
+.find input[type="text"] {
+    width: 100%;
+    border-radius: 2px;
+    border: 1px solid black;
+}
