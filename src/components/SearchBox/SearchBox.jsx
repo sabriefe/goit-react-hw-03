@@ -1,16 +1,16 @@
 import css from "./SearchBox.module.css";
-const SearchBox = ({ onSearch }) => {
+
+const SearchBox = ({ value, onSearch }) => {
   return (
-    <>
-      <div className={css.find}>
-        <p>Find contacts by name</p>
-        <input
-          type="text"
-          name="search"
-          onChange={(evt) => onSearch(evt.target.value)}
-        />
-      </div>
-    </>
+    <div className={css.find}>
+      <p>Find contacts by name</p>
+
+      <input
+        type="text"
+        value={value}
+        onChange={(evt) => onSearch(evt.target.value)}
+      />
+    </div>
   );
 };
 

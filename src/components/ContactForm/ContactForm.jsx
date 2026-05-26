@@ -5,7 +5,7 @@ import * as Yup from "yup";
 import css from "./ContactForm.module.css";
 const initialValues = {
   name: "",
-  phone: "",
+  number: "",
 };
 const ContactForm = ({ onSubmit }) => {
   const handler = (values, actions) => {
@@ -23,13 +23,13 @@ const ContactForm = ({ onSubmit }) => {
       .min(3, "Too Short!")
       .max(50, "Too long!")
       .required("Required!"),
-    phone: Yup.string()
+    number: Yup.string()
       .min(3, "Too Short!")
       .max(50, "Too long!")
       .required("Required!"),
   });
   const name = useId();
-  const phone = useId();
+  const number = useId();
   return (
     <>
       <Formik
@@ -41,9 +41,9 @@ const ContactForm = ({ onSubmit }) => {
           <label htmlFor={name}>Name</label>
           <Field type="text" name="name" id={name} />
           <ErrorMessage name="name" component="span" />
-          <label htmlFor={phone}>Number</label>
-          <Field type="tel" name="phone" id={phone} />
-          <ErrorMessage name="phone" component="span" />
+          <label htmlFor={number}>Number</label>
+          <Field type="tel" name="number" id={number} />
+          <ErrorMessage name="number" component="span" />
           <button className={css.btn} type="submit">
             Add Contact
           </button>
